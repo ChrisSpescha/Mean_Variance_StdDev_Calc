@@ -22,13 +22,6 @@ def calculate(list):
             rows_max.append(i.max())
             rows_min.append(i.min())
             rows_sum.append(i.sum())
-        print(rows_mean)
-        print(rows_var)
-        print(rows_std)
-        print(rows_max)
-        print(rows_min)
-        print(rows_sum)
-        
         col_mean = []
         col_var = []
         col_std = []
@@ -39,5 +32,15 @@ def calculate(list):
             col_mean.append(i.mean())
             col_var.append(i.var())
             col_std.append(i.std())
-            
-        return array
+            col_max.append(i.max())
+            col_min.append(i.min())
+            col_sum.append(i.sum())
+        
+        result = {'mean' : [col_mean, rows_mean, array.mean()],
+                 'variance': [col_var, rows_var, array.var()],
+                 'standard deviation': [col_std, rows_std, array.std()],
+                 'max': [col_max, rows_max, array.max()],
+                 'min': [col_min, rows_min, array.min()],
+                 'sum': [col_sum, rows_sum, array.sum()],
+                 }
+        return result
